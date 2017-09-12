@@ -1,0 +1,40 @@
+
+body {
+	background-color: #ffef96;
+}
+
+h1 {
+	text-align: center;
+}
+
+ol {
+	float: left;
+}
+
+li {
+	padding: 5px;
+	margin: 5px;
+	background: #ffffff;
+}
+
+.burger-name {	
+	float: left;
+}
+
+.burger-devour {	
+	float: left;
+}
+
+.container {	
+	width: 880px;
+	border: 10px;
+	border-color: blue;
+	margin: 0 auto;
+}
+
+.create-burger-form {
+	text-align: center;
+	clear: both;
+	padding: 5px;
+	margin: 5px;
+}
