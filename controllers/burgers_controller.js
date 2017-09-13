@@ -13,21 +13,14 @@ router.get("/", function(req, res) {
 
 router.post("/", function(req, res) {
 	burger.create(["burger_name", "devoured"], 
-		[req.body.burger_name, res.body.devoured], function() {
+		[req.body.burger_name, false], function() {
 		res.redirect("/");	
 	});
 });
 
 router.put("/:id", function(req, res) {
-	var condition = "id=" + req.params.id;
+	var condition = "id = " + req.params.id;
 	burger.update({devoured: req.body.devoured}, condition, function() {
-		res.redirect("/");	
-	});
-});
-
-router.delete("/:id", function(req, res) {
-	var condition = "id=" + req.params.id;
-	burger.delete(condition, function() {
 		res.redirect("/");	
 	});
 });

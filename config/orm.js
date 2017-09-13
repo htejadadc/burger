@@ -1,18 +1,18 @@
 var connection = require("../config/connection.js");
 
-function addMarkstorequest(length) {
+function addMarkstorequest(leng) {
 	var qmarks  = [];
-	for (i = 0; i < length; i++) {
+	for (var i = 0; i < leng; i++) {
 		qmarks.push("?");
 	}
 	return qmarks.toString();
 };
 
-function addObjectsql(obj) {
+function addObjectsql(ob) {
 	var objarr = [];
-	for (var key in obj) {
-		if (Object.hasOwnProperty.call(obj, key)) {
-			objarr.push(key + "=" + obj[key]);
+	for (var key in ob) {
+		if (Object.hasOwnProperty.call(ob, key)) {
+			objarr.push(key + "=" + ob[key]);
 		}
 	}
 	return objarr.toString();
@@ -55,18 +55,7 @@ var orm = {
 			}
 			cb(result);
 		});
-	},
-	delete: function(table, condition, cb) {
-		var queryString = "DELETE FROM " + table;
-		queryString += " WHERE ";
-		queryString += condition;
-		connection.query(queryString, function(err, result) {
-			if(err) {
-				throw err;
-			}
-			cb(result);
-		});
-	}
+	},	
 };
 
 module.exports = orm;
