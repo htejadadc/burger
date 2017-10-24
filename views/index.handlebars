@@ -1,33 +1,45 @@
-<h1>Eat-Da-Burger!</h1>
 
 <div class="container">
-  <ol>
-    {{#each burgers}}
-      {{#unless this.devoured}}
-        <li>
-          <div class="burger-name">
-            {{this.burger_name}}
-          </div>
-
-          <form class="burger-devour" action="/{{this.id}}?_method=PUT" method="POST">
-            <input type="hidden" name="devoured" value="true">
-            <button type="submit">Devour it!</button>
-          </form>
-        
-        </li>
-      {{/unless}}
-    {{/each}}
-  </ol>
-
-  <ol>
-    {{#each burgers}}
-      {{#if this.devoured}}
-        <li>
-          {{this.burger_name}}                                  
-        </li>
-      {{/if}}
-    {{/each}}
-  </ol>
+  <div class="row">
+    <div class="col-xs-12 text-center" id="top-bar">
+      <img src="../assets/img/burger.jpg" alt="burger"/>
+      <h1>Eat-Da-Burger!</h1>
+    </div>
+    <div class="col-xs-6 text-center" class="task">
+      <div class="row">
+        <ol>
+          {{#each burgers}}
+            {{#unless this.devoured}}
+              <div class="col-xs-9 text-center">
+                <li>
+                  <div class="burger-name">
+                    {{this.burger_name}}
+                  </div>       
+                  <div class="col-xs-3 text-center">         
+                    <form class="burger-devour" action="/{{this.id}}?_method=PUT" method="POST">
+                      <input type="hidden" name="devoured" value="true">
+                      <button type="submit">Devour it!</button>
+                    </form>   
+                  </div>           
+                </li>
+              </div>  
+            {{/unless}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+    <div class="col-xs-6 text-center" class="task">
+      <ol>
+        {{#each burgers}}
+          {{#if this.devoured}}
+            <li>
+              {{this.burger_name}}                                  
+            </li>
+          {{/if}}
+        {{/each}}
+      </ol>
+    </div>
+  </div>
 </div>
 
 <form class="create-burger-form" action="/" method="POST">

@@ -1,5 +1,7 @@
 
 body {
+	height: 850px;
+	width: 100%;
 	background-color: #ffef96;
 }
 
@@ -15,6 +17,11 @@ li {
 	padding: 5px;
 	margin: 5px;
 	background: #ffffff;
+}
+
+img {
+	border: 1px;
+	border-color: black;
 }
 
 .burger-name {	
